@@ -1,12 +1,18 @@
 import React from 'react';
 import { Text, View,Image,StyleSheet,Dimensions } from 'react-native';
+import {Album} from '../../types';
 const wheight=Dimensions.get('window').height;
 const wwidth=Dimensions.get('window').width;
-export default function Album(props){
+
+export type AlbumProps={
+  album:Album,
+}
+
+export default function AlbumSquare(props: AlbumProps){
     return (
       <View style={styles.container} >
-    <Image source ={{uri: props.imageUrl}} style={styles.image}/>
-    <Text style={styles.text}>{props.text}</Text>
+    <Image source ={{uri: props.album.imageUrl}} style={styles.image}/>
+    <Text style={styles.text}>{props.album.artistNames}</Text>
       </View>
     );
 }
